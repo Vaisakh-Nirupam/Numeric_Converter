@@ -31,7 +31,7 @@
 
 /* Unnecessary spacing */
 [data-testid="stHeadingWithActionElements"] h3 {
-    padding: 0;
+    /* padding: 0; */
     color: #A0F6FF;
 }
 
@@ -41,9 +41,16 @@
 }
 
 /* Font size of write, label, buttons */
-[data-testid="stMarkdownContainer"] p {
+[data-testid="stMarkdownContainer"] > p {
     font-size: 17px;
     color: #f1f1f1;
+    margin: 5px 0px;
+}
+
+/* Adjusting box size */
+[data-testid="stAlertContentWarning"], [data-testid="stAlertContentSuccess"] p {
+    margin: -5px 0px 5px;
+    padding-bottom: 5px;
 }
 
 /* Main container blurry glass effect */
@@ -56,9 +63,4 @@
     backdrop-filter: blur(12px); 
     -webkit-backdrop-filter: blur(12px); 
     border: 1px solid rgba(255, 255, 255, 0.18); 
-}
-
-h1 {
-    font-family: 'Poppins';
-    color: #00FFFF;
 }

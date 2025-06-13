@@ -63,32 +63,58 @@ class Pages:
 
     # HowTo page
     def howto(self):
-        # img.image()
-
         with intro:
             st.title("📝 **How to Use:**")
             st.markdown("""
             1️⃣ *(Optional)* Create a copy of your DataFrame with only the columns you want to convert  
-            2️⃣ Pass this DataFrame into the **Numeric Converter** App  
-            3️⃣ It returns a clean DataFrame with values correctly typed as `int`, `float`, etc.
+            2️⃣ Upload the CSV file using the uploader below  
+            3️⃣ Click Convert to run the **Numeric Converter**  
             """)
+
             st.write("✅ Perfect for preprocessing before EDA or machine learning!")
 
-            # df = pd.read_csv()
+            # File uploader
+            uploaded_file = st.file_uploader("📁 Upload your CSV file", type=["csv"])
+            
+            # Buttons layout
+            conv, stat, b = st.columns([1.5, 4, 1], vertical_alignment="top")
+            
+            if uploaded_file is not None:
+                try:
+                    df = pd.read_csv(uploaded_file)
+                    st.session_state.original_df = df
+                    stat.success("✅ File uploaded successfully!")
+                except Exception as e:
+                    st.error(f"❌ Error reading file: {e}")
 
             # Result button
-            start = st.button("Convert", key="convert")
+            start = conv.button("Convert", key="convert")
             if start:
-                # result = Numeric_Converter(df)
-                st.session_state.select = "Result"
-                st.rerun()
+                if "original_df" in st.session_state:
+                    result = Numeric_Converter(st.session_state.original_df)
+                    st.session_state.converted_df = result
+                    st.session_state.select = "Result"
+                    st.rerun()
+                else:
+                    stat.warning("⚠️ Please upload a CSV file first!")
 
     # Result page
     def result(self):
-        b1, txt, btn, b2 = st.columns([1, 10, 1, 1], vertical_alignment="center")
+        b1, txt, btn1, btn2, b2 = st.columns([1, 3, 1, 1, 1], vertical_alignment="top")
 
-        txt.subheader("Numeric Converter has Successfully Converted your Dataset!")
-        start = btn.button("Home", key="home")
+        txt.subheader("🎯 Your Cleaned Dataset is Ready:")
+
+        if "converted_df" in st.session_state:
+            df = st.session_state.converted_df
+            st.dataframe(df, use_container_width=True, height=350)
+
+            # CSV download button
+            csv = df.to_csv(index=False).encode('utf-8')
+            btn1.download_button(label="Download CSV", data=csv, file_name="converted_dataset.csv", mime="text/csv")
+        else:
+            st.warning("⚠️ No data found. Please go back and upload a CSV file first.")
+
+        start = btn2.button("Home", key="home")
         if start:
             st.session_state.select = "Home"
             st.rerun()
