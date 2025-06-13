@@ -35,6 +35,8 @@ def Numeric_Converter(df):
 
   return df_cpy
 
+# Displaying the dataset
+# st.image("")
 
 # Class Pages
 class Pages:
@@ -64,7 +66,7 @@ class Pages:
         # img.image()
 
         with intro:
-            st.write("📝 **How to Use:**")
+            st.title("📝 **How to Use:**")
             st.markdown("""
             1️⃣ *(Optional)* Create a copy of your DataFrame with only the columns you want to convert  
             2️⃣ Pass this DataFrame into the **Numeric Converter** App  
@@ -72,12 +74,12 @@ class Pages:
             """)
             st.write("✅ Perfect for preprocessing before EDA or machine learning!")
 
-            df = pd.read_csv()
+            # df = pd.read_csv()
 
             # Result button
             start = st.button("Convert", key="convert")
             if start:
-                result = Numeric_Converter(df)
+                # result = Numeric_Converter(df)
                 st.session_state.select = "Result"
                 st.rerun()
 
@@ -85,7 +87,7 @@ class Pages:
     def result(self):
         b1, txt, btn, b2 = st.columns([1, 10, 1, 1], vertical_alignment="center")
 
-        txt.subheader("Numeric Converter has Succefully Converted your Dataset!")
+        txt.subheader("Numeric Converter has Successfully Converted your Dataset!")
         start = btn.button("Home", key="home")
         if start:
             st.session_state.select = "Home"
@@ -98,8 +100,9 @@ page_calls = Pages()
 main_container = st.container(height=500, border=True)
 
 with main_container:    
-    b1,img,b2,intro,b3 = st.columns([0.2,2,0.2,2.5,0.4])
+    b1,img,b2,intro,b3 = st.columns([0.2,2,0.2,2.2,0.4])
 
+    # Page navigation
     if "select" not in st.session_state:
         st.session_state.select = "Home"
 
