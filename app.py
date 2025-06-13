@@ -9,6 +9,33 @@ st.set_page_config(page_title="LPA", page_icon="Images/LPA Logo.png", layout="wi
 with open("css/Style.css") as css:
     st.markdown(f"<style>{css.read()}</style>", unsafe_allow_html=True)
 
+# Numeric Converter Function
+def Numeric_Converter(df):
+  df_cpy = df.copy()
+  df_cpy.dropna(inplace=True)
+  dfc = df_cpy.copy()
+
+  for i in dfc:
+    if dfc[i].dtype == 'object':
+
+          pun = '!"#$%&\'()*+,-/:;<=>?@[\\]^_`{|}~₹€£'
+          alp = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+          dfc[i] = dfc[i].apply(func = lambda x : x.split()[0])
+
+          for j in pun:
+            dfc[i] = dfc[i].str.replace(j,"")
+
+          if dfc[i].str.isalpha().all():
+            continue
+
+          for k in alp:
+            dfc[i] = dfc[i].str.replace(k,"")
+          else:
+            df_cpy[i] = pd.to_numeric(dfc[i], errors="coerce")
+
+  return df_cpy
+
+
 # Class Pages
 class Pages:
     # Home page
@@ -45,9 +72,12 @@ class Pages:
             """)
             st.write("✅ Perfect for preprocessing before EDA or machine learning!")
 
+            df = pd.read_csv()
+
             # Result button
             start = st.button("Convert", key="convert")
             if start:
+                result = Numeric_Converter(df)
                 st.session_state.select = "Result"
                 st.rerun()
 
