@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 
 # Full page
-st.set_page_config(page_title="Numeric Converter", page_icon="Images/.png", layout="wide")
+st.set_page_config(page_title="Numeric Converter", page_icon="Images/icon.png", layout="wide")
 
 # Adding styles
 with open("css/Style.css") as css:
@@ -36,7 +36,7 @@ def Numeric_Converter(df):
   return df_cpy
 
 # Page Title
-st.image("")
+st.image("Images/title.png")
 
 # Class Pages
 class Pages:
@@ -102,13 +102,13 @@ class Pages:
 
     # Result page
     def result(self):
-        b1, txt, btn1, btn2, b2 = st.columns([1, 3, 1, 1, 1], vertical_alignment="top")
+        b1, txt, btn1, btn2, b2 = st.columns([1, 5, 1.5, 1, 1], vertical_alignment="bottom")
 
-        txt.subheader("🎯 Your Cleaned Dataset is Ready:")
+        txt.header("🎯 Your Cleaned Dataset is Ready:")
 
         if "converted_df" in st.session_state:
             df = st.session_state.converted_df
-            st.dataframe(df, use_container_width=True, height=350)
+            st.dataframe(df, use_container_width=True, height=320)
 
             # CSV download button
             csv = df.to_csv(index=False).encode('utf-8')
