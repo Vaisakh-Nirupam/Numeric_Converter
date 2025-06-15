@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 
 # Full page
-st.set_page_config(page_title="LPA", page_icon="Images/LPA Logo.png", layout="wide")
+st.set_page_config(page_title="Numeric Converter", page_icon="Images/.png", layout="wide")
 
 # Adding styles
 with open("css/Style.css") as css:
@@ -35,14 +35,14 @@ def Numeric_Converter(df):
 
   return df_cpy
 
-# Displaying the dataset
-# st.image("")
+# Page Title
+st.image("")
 
 # Class Pages
 class Pages:
     # Home page
     def home(self):        
-        # img.image()
+        img.image("Images/nums1.jpg")
 
         with intro:
             st.title("Numeric Converter")
@@ -63,6 +63,8 @@ class Pages:
 
     # HowTo page
     def howto(self):
+        img.image("Images/nums2.jpg")
+        
         with intro:
             st.title("📝 **How to Use:**")
             st.markdown("""

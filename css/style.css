@@ -27,6 +27,7 @@
 [data-testid="stHeadingWithActionElements"] h1 {
     padding: 0;
     color: #D9A7FF;
+    font-family: 'ciguatera';
 }
 
 /* Unnecessary spacing */
