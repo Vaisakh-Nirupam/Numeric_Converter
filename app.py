@@ -6,7 +6,7 @@ import pandas as pd
 st.set_page_config(page_title="Numeric Converter", page_icon="Images/icon.png", layout="wide")
 
 # Adding styles
-with open("css/Style.css") as css:
+with open("css/style.css") as css:
     st.markdown(f"<style>{css.read()}</style>", unsafe_allow_html=True)
 
 # Numeric Converter Function
