@@ -2,6 +2,8 @@
 
 A smart and user-friendly **Streamlit** application that cleans up messy data by converting columns with text-based numbers into real numeric values — making your datasets analysis-ready in just a few clicks.
 
+🔗 **Live App:** [https://numeric-converter.streamlit.app/](https://numeric-converter.streamlit.app/)
+
 ---
 
 ## 🚀 Features
@@ -96,7 +98,3 @@ streamlit run app.py
 🔗 [LinkedIn](https://www.linkedin.com/in/vaisakh-nirupam)
 
 ---
-
-## 📄 License
-
-This project is open-source and available under the [MIT License](LICENSE)
