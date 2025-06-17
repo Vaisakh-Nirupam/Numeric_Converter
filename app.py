@@ -36,7 +36,8 @@ def Numeric_Converter(df):
   return df_cpy
 
 # Page Title
-st.image("Images/title.png")
+title, space = st.columns([5,5])
+title.image("Images/title.png", use_container_width=True)
 
 # Class Pages
 class Pages:
@@ -44,7 +45,7 @@ class Pages:
     def home(self):        
         img.image("Images/nums1.jpg")
 
-        with intro:
+        with text:
             st.title("Numeric Converter")
             st.write("🧠 **Smart Data Cleaner for Numeric Columns!**")
             st.write("Easily convert values that *look like numbers* but are actually stored as text or mixed types into real numeric values.")
@@ -63,9 +64,9 @@ class Pages:
 
     # HowTo page
     def howto(self):
-        img.image("Images/nums2.jpg")
+        img.image("Images/nums2.jpg", use_container_width=True)
         
-        with intro:
+        with text:
             st.title("📝 **How to Use:**")
             st.markdown("""
             1️⃣ *(Optional)* Create a copy of your DataFrame with only the columns you want to convert  
@@ -125,10 +126,10 @@ class Pages:
 page_calls = Pages()
 
 # Main Container
-main_container = st.container(height=500, border=True)
+main_container = st.container(border=True)
 
 with main_container:    
-    b1,img,b2,intro,b3 = st.columns([0.2,2,0.2,2.2,0.4])
+    img, text = st.columns([4.5, 5.5],gap="medium") 
 
     # Page navigation
     if "select" not in st.session_state:
