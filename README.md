@@ -77,9 +77,9 @@ streamlit run app.py
 
 ## 🖼️ Screenshots
 
-![Home Page](Images/Demo1_Home.jpg)  
-![How To Use](Images/Demo2_Howto.jpg)
-![Result Page](Images/Demo3_Result.jpg)
+![Home Page](Images/Demo1_Home.png)  
+![How To Use](Images/Demo2_Howto.png)
+![Result Page](Images/Demo3_Result.png)
 
 ---
 
