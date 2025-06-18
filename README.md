@@ -77,9 +77,9 @@ streamlit run app.py
 
 ## 🖼️ Screenshots
 
-- `Images/Demo1_Home.jpg` → Home Page  
-- `Images/Demo2_Howto.jpg` → How To Use  
-- `Images/Demo3_Result.jpg` → Result Page 
+![Home Page](Images/Demo1_Home.jpg)  
+![How To Use](Images/Demo2_Howto.jpg)
+![Result Page](Images/Demo3_Result.jpg)
 
 ---
 
