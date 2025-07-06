@@ -12,11 +12,11 @@ A smart and user-friendly **Streamlit** application that cleans up messy data by
 
 ## 🚀 Features
 
-- 📤 Upload CSV files with mixed or messy data  
-- 🔍 Automatically detect and convert object/text columns to numeric  
-- 💡 Handles symbols (₹, €, $, %, etc.), alphabets, and punctuations  
-- 📥 Download the cleaned dataset instantly  
-- 🎨 Beautiful UI with custom images and CSS for enhanced UX  
+- 📤 Upload CSV files with mixed or messy data
+- 🔍 Automatically detect and convert object/text columns to numeric
+- 💡 Handles symbols (₹, €, $, %, etc.), alphabets, and punctuations
+- 📥 Download the cleaned dataset instantly
+- 🎨 Beautiful UI with custom images and CSS for enhanced UX
 
 ---
 
@@ -32,16 +32,16 @@ Then this tool is for you!
 
 ✅ Designed for data preprocessing before:
 
-- Exploratory Data Analysis (EDA)  
-- Machine Learning model training  
-- Data visualization dashboards  
+- Exploratory Data Analysis (EDA)
+- Machine Learning model training
+- Data visualization dashboards
 
 ---
 
 ## 🛠️ Tech Stack
 
 | Tool      | Description                    |
-|-----------|--------------------------------|
+| --------- | ------------------------------ |
 | Streamlit | Interactive web app framework  |
 | Pandas    | Data cleaning and manipulation |
 | CSS       | Custom styling for UI          |
@@ -53,8 +53,8 @@ Then this tool is for you!
 1. **Clone the repository**:
 
 ```bash
-git clone https://github.com/your-username/numeric-converter.git
-cd numeric-converter
+git clone https://github.com/Vaisakh-Nirupam/Numeric_Converter.git
+cd Numeric_Converter
 ```
 
 2. **Install dependencies**:
@@ -70,7 +70,8 @@ streamlit run app.py
 ```
 
 > ✅ Make sure your file structure includes:
-> - A `css/style.css` file for styling  
+>
+> - A `css/style.css` file for styling
 > - An `Images/` folder with `title.png`, `nums1.jpg`, and `nums2.jpg`
 
 ---
@@ -85,13 +86,13 @@ streamlit run app.py
 
 ## 🧠 How It Works
 
-1. Upload a CSV file containing textual or mixed numeric columns  
+1. Upload a CSV file containing textual or mixed numeric columns
 2. The app removes:
-   - Punctuation symbols  
-   - Currency signs and special characters  
-   - Alphabets in mixed-type numeric columns  
-3. Converts valid data to numeric format using `pandas.to_numeric()`  
-4. Outputs a cleaned DataFrame ready for download or further processing  
+   - Punctuation symbols
+   - Currency signs and special characters
+   - Alphabets in mixed-type numeric columns
+3. Converts valid data to numeric format using `pandas.to_numeric()`
+4. Outputs a cleaned DataFrame ready for download or further processing
 
 ---
 
